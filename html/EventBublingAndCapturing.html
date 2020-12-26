@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Event Bubbling and Capturing</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style >
+            .superParent{
+                padding:50px;
+                border:2px solid black;
+                margin-top:100px;
+                border-radius:10px;
+                padding-top:20px;
+            }
+            .parent{
+                padding:50px;
+                border:2px solid black;
+                border-radius:10px;
+                padding-top:20px;
+            }
+            .child{
+                padding:50px;
+                border:2px solid black;
+                height:150px;
+                border-radius:10px;
+                padding-top:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="superParent">
+        <h1>Supre Parent</h1>
+            <div class="parent">
+            <h1>Parent</h1>
+                <div class="child">
+                    <h1>Child</h1>
+                </div>
+            </div>
+        </div>
+        <script>
+            //  event Bubbling Example
+            /*document.getElementsByClassName('superParent')[0].addEventListener('click',()=>{
+                console.log("superParent Clicked");
+            })
+            document.getElementsByClassName('parent')[0].addEventListener('click',()=>{
+                console.log("parent Clicked");
+            })
+            document.getElementsByClassName('child')[0].addEventListener('click',(event)=>{
+                event.stopPropagation(); //to stop the event bubbling/propogation
+                console.log("child Clicked");
+            })
+            document.addEventListener('click',()=>{
+                console.log("document Clicked");
+            })*/
+            //  event capturing/event tokling down/event propogation Example
+            document.getElementsByClassName('superParent')[0].addEventListener('click',()=>{
+                console.log("superParent Clicked");
+            },true)
+            document.getElementsByClassName('parent')[0].addEventListener('click',()=>{
+                console.log("parent Clicked");
+            },true)
+            document.getElementsByClassName('child')[0].addEventListener('click',()=>{
+                //event.stopPropagation(); // for capuring it won't work out because capture started from top div will excute all till it reaches Clicked div
+                console.log("child Clicked");
+            },true)
+            document.addEventListener('click',()=>{
+                console.log("document Clicked");
+            },true)
+        </script>
+    </body>
+</html>
