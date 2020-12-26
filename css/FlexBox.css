@@ -54,3 +54,15 @@
     flex: 1;
     order:1;
 }
+/* div align center vertically and horizantally*/
+.maincontainer{
+    display: flex;
+    background: black;
+    height:100vh;
+}
+
+.centerContainer{
+    width:600px;
+    height:300px;
+    background: white;
+}

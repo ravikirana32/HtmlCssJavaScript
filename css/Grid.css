@@ -1,0 +1,110 @@
+:root{
+    --main-border-radius:10px;
+    --main-padding:10px;
+}
+
+.container{
+    display: grid;
+    height:100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+    grid-gap: 0.2rem;
+}
+
+nav{
+  background: blanchedalmond;
+  grid-area: nav;
+  border-radius: var(--main-border-radius);
+  padding: var(--main-padding);
+}
+
+main{
+    background: blueviolet;
+    grid-area: main;
+    border-radius: var(--main-border-radius);
+    padding: var(--main-padding);
+}
+
+#sidebar{
+    background: burlywood;
+    grid-area: sidebar;
+    border-radius: var(--main-border-radius);
+    padding: var(--main-padding);
+}
+
+#content1{
+    background: cadetblue;
+    grid-area: content1;
+    border-radius: var(--main-border-radius);
+    padding: var(--main-padding);
+}
+
+#content2{
+    background: chartreuse;
+    grid-area: content2;
+    border-radius: var(--main-border-radius);
+    padding: var(--main-padding);
+}
+
+#content3{
+    background: chocolate;
+    grid-area: content3;
+    border-radius: var(--main-border-radius);
+    padding: var(--main-padding);
+}
+
+footer{
+    background: darkcyan;
+    grid-area: footer;
+    border-radius: var(--main-border-radius);
+    padding: var(--main-padding);
+}
+
+@media only screen and (max-width:550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows:0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+        "nav"
+        "sidebar"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+    }
+}
+
+.wraper{
+    /* display:grid; */
+    background: black;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    height:250px;
+    width:500px;
+    background: white;
+}
+
+.normalWraper{
+    background: black;
+    height: 100vh;
+}
+
+.normalCenter{
+    position: relative;
+    height: 250px;
+    width: 500px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
