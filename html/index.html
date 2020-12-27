@@ -22,7 +22,7 @@
     <!--<script src="../js/throttling.js"></script>-->
 
     <!--Event Delegation start-->
-    <div class="container" onclick="printData(event)">
+    <!--<div class="container" onclick="printData(event)">
       <div class="item" >
         <p id="category_1">category 1</p>
       </div>
@@ -39,7 +39,13 @@
         <p id="category_5">category 5</p>
       </div>
     </div>
-    <script src="../js/eventDelegation.js"></script>
+    <script src="../js/eventDelegation.js"></script>-->
+    <!--Event Delegation end-->
+
+    <!--Event Delegation start-->
+    <label>Search</label>
+    <input type="text" onkeyup="betterFunction(event)" />
+    <script src="../js/debouncing.js"></script>
     <!--Event Delegation end-->
 
   </body>
