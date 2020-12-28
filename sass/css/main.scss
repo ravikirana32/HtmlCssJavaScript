@@ -1,0 +1,112 @@
+$colors:(
+    primary:#7cf108,
+    secondary:rgb(40, 138, 218),
+    whiteColor:#fff,
+);
+
+$padding:20px;
+$border:15px;
+$desktop:840px;
+
+@mixin desktop {
+    @media (min-width:#{$desktop}) {
+        @content;
+    }
+}
+
+@function getColor($color){
+    @return map-get($colors,$color);
+}
+
+body,html{
+    height:100%;
+}
+body{
+    font-family: 'Monsterrat';
+    margin: 0;
+
+    #bg{
+        clip-path: polygon(0 0, 100% 0, 100% 74%, 63% 100%, 0 100%);
+        background-color: getColor(secondary);
+        height:100%;
+        width:100%;
+        z-index: -1;
+
+        @include desktop(){
+            clip-path: polygon(0 0, 78% 0, 54% 100%, 0% 100%);
+        }
+    }
+
+    header{
+        padding-top: 15px;
+        a{
+            padding:$padding;
+            color: getColor(whiteColor);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    } 
+}
+
+main{
+    section#card{
+        background-color: getColor(whiteColor);
+        padding:20px;
+        margin: 1rem auto;
+        border-radius:$border;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width:80%;
+    }
+
+    ul{
+        list-style-type: none;
+        margin:0px;
+        padding: 0px;
+
+        li{
+            margin-bottom: 10px;
+
+            span{
+                position: absolute;
+                width:30px;
+                height:30px;
+                background-color: gray;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            strong{
+                display: inline-block;
+                margin-left:max(40px);
+                margin-top: 10px;
+            }
+        }
+    }
+
+    section#primary{
+        color: getColor(whiteColor);
+        padding: $padding;
+        text-align: center;
+
+        h1{
+            font-size: 3em;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        p{
+            font-size: 1.4em;
+        }
+
+        a{
+            color: getColor(secondary);
+            border-radius: 15px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: getColor(primary);
+            padding:15px;
+            margin:15px auto 0 auto;
+        }
+    }
+}

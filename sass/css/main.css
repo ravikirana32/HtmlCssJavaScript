@@ -1,0 +1,98 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Monsterrat';
+  margin: 0;
+}
+
+body #bg {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 74%, 63% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 74%, 63% 100%, 0 100%);
+  background-color: #288ada;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+@media (min-width: 840px) {
+  body #bg {
+    -webkit-clip-path: polygon(0 0, 78% 0, 54% 100%, 0% 100%);
+            clip-path: polygon(0 0, 78% 0, 54% 100%, 0% 100%);
+  }
+}
+
+body header {
+  padding-top: 15px;
+}
+
+body header a {
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+main section#card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 1rem auto;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 80%;
+}
+
+main ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+main ul li {
+  margin-bottom: 10px;
+}
+
+main ul li span {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+main ul li strong {
+  display: inline-block;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+main section#primary {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main section#primary h1 {
+  font-size: 3em;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+main section#primary p {
+  font-size: 1.4em;
+}
+
+main section#primary a {
+  color: #288ada;
+  border-radius: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #7cf108;
+  padding: 15px;
+  margin: 15px auto 0 auto;
+}
+/*# sourceMappingURL=main.css.map */
