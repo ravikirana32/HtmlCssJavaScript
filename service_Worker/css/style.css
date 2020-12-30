@@ -1,0 +1,38 @@
+li{
+    display: inline-block;
+    
+    color: white;
+    text-decoration: none;
+    margin:10px;
+}
+
+li a{
+    color: white;
+    text-decoration: none; 
+    background: black;
+}
+
+li:hover,li:active,li:focus{
+    color: white;
+    text-decoration: none; 
+    background: #382e2e;
+}
+
+ul{
+    background: black;
+    margin-top: 0px;
+}
+
+body{
+    margin: 0px !important;
+}
+
+.header{
+    height:100px;
+    color:white;
+    display:grid;
+    justify-content:center;
+    align-items:center;
+    background:#382e2e;
+    border-bottom:1px solid white;
+}
