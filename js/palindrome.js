@@ -18,7 +18,7 @@ isPalindrome(str);
 isPalindrome(str2);
 
 //Example 2 number Palindrome
-
+    //solution 1
 const isNumberPalindrome=(number)=>{
     let reminder,final=0;
     let temp=number;
@@ -28,12 +28,27 @@ const isNumberPalindrome=(number)=>{
         final=final*10+reminder;
     }
     if(final===temp){
-        console.log("Example 2: The Number "+temp+" is Palindrome");
+        console.log("Example 2: Solution1: The Number "+temp+" is Palindrome");
     }else{
-        console.log("Example 2: The Number "+temp+" is Not a Palindrome");
+        console.log("Example 2: Solution1: The Number "+temp+" is Not a Palindrome");
     }
 }
 isNumberPalindrome(number1);
 isNumberPalindrome(number2);
+
+    //solution 1
+
+const numberUsingAsSting=(num)=>{
+    let str=num.toString();
+    let reversedNum=parseInt(str.split('').reverse().join(''));
+    if(reversedNum===num){
+        console.log("Example 2: Solution2: The Number "+num+" is Palindrome");
+    }else{
+        console.log("Example 2: Solution2: The Number "+num+" is Not a Palindrome");
+    }
+}
+
+numberUsingAsSting(number1);
+numberUsingAsSting(number2);
 
 
