@@ -35,3 +35,5 @@ const isNumberPalindrome=(number)=>{
 }
 isNumberPalindrome(number1);
 isNumberPalindrome(number2);
+
+
