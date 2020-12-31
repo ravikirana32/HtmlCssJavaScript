@@ -82,3 +82,68 @@ const isStringHasUniqueChar=(str)=>{
 
 isStringHasUniqueChar('abcdefghi');
 isStringHasUniqueChar('ravikirana');
+
+//###########################################################################
+//find string permutations
+//strings equal/strings length equal / char counts are equal return true else false
+
+const getCharCounts=(str)=>{
+    let obj={}
+    for(let item of str){
+        obj[item]=parseInt((!obj[item])?1:obj[item]++);
+        
+    }
+    return obj;
+}
+
+const findPermutations=(str1,str2)=>{
+    if(str1===str2){
+        return true;
+    }else{
+        if(str1.length !== str2.length){
+            return false;
+        }else{
+            const obj1=getCharCounts(str1);
+            const obj2=getCharCounts(str2);
+            for(let key in obj1){
+                if(obj1[key] !== obj2[key]){
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+
+console.log(findPermutations('ravi','vira'));
+console.log(findPermutations('kirans','kirana'));
+
+//####################################################################
+//string encription replace space by %20
+//and dont replace if space is there at the end
+
+//solution 1
+const stringEncryptionS1=(str)=>{
+    let ar=str.trim().split('');
+    for(let i=0;i<ar.length;i++){
+        if(ar[i]==' '){
+            ar[i]='%20'
+        }
+    }
+    console.log("Encption string Solution1 : ",ar.join(""));
+}
+
+const stringEncryptionS2=(str)=>{
+    let ar=str.trim();
+    let newStr="";
+    for(let item of ar){
+        if(item==' '){
+            newStr=newStr+'%20';
+        }else{
+            newStr=newStr+item;
+        }
+    }
+    console.log("Encption string Solution2 :  ",newStr);
+}
+stringEncryptionS1("   Ravi kirana ankanahalli   ");
+stringEncryptionS2("   Ravi kirana ankanahalli   ");
