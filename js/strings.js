@@ -133,17 +133,17 @@ const stringEncryptionS1=(str)=>{
     console.log("Encption string Solution1 : ",ar.join(""));
 }
 
-const stringEncryptionS2=(str)=>{
+const stringEncryptionS2=(str,delimiter)=>{
     let ar=str.trim();
     let newStr="";
     for(let item of ar){
         if(item==' '){
-            newStr=newStr+'%20';
+            newStr=newStr+delimiter;
         }else{
             newStr=newStr+item;
         }
     }
     console.log("Encption string Solution2 :  ",newStr);
 }
-stringEncryptionS1("   Ravi kirana ankanahalli   ");
-stringEncryptionS2("   Ravi kirana ankanahalli   ");
+stringEncryptionS1("   Ravi kirana ankanahalli   ","%20");
+stringEncryptionS2("   Ravi kirana ankanahalli   ","#54336");
