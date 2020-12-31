@@ -32,6 +32,31 @@ const findCharCount=(string)=>{
     console.log("Max chars is ",maxCharArray);
 }
 
-findCharCount("ravi kiranair");
+//findCharCount("ravi kiranair");
 
 //##############################################################################
+//FIZZBUZZ 
+//multiples of 3 must print FIZZ
+//multiples of 5 must print BUZZ
+//multiples of 3 and multiples of 5 must print FIZZBUZZ
+
+const fizzbuzz=(num)=>{
+    for(let i=1;i<=num;i++){
+
+        if(i%3==0 && i%5==0){
+            console.log("FIZZBUZZ");
+        }
+        if(i%5==0 && i%3!=0){
+            console.log("BUZZ");
+        }
+        if(i%3==0 && i%5!=0){
+            console.log("FIZZ");
+        }
+        if(i%3!=0&&i%5!=0){
+            console.log(i);
+        }
+        
+    }
+}
+
+fizzbuzz(15);

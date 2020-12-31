@@ -39,7 +39,11 @@ isNumberPalindrome(number2);
     //solution 1
 
 const numberUsingAsSting=(num)=>{
+
     let str=num.toString();
+    // if(num<0){
+    //     let reversedNum=-parseInt(str.split('').reverse().join(''));
+    // }
     let reversedNum=parseInt(str.split('').reverse().join(''));
     if(reversedNum===num){
         console.log("Example 2: Solution2: The Number "+num+" is Palindrome");
