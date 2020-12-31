@@ -147,3 +147,51 @@ const stringEncryptionS2=(str,delimiter)=>{
 }
 stringEncryptionS1("   Ravi kirana ankanahalli   ","%20");
 stringEncryptionS2("   Ravi kirana ankanahalli   ","#54336");
+
+//####################################################################
+//One way algorithm 
+//get 2 string both stringd should be same in one edit
+//a. insert a char, b.remove a char,  c.replace a char
+//if it is return true else if it take more then one edit return false
+//Ref: https://www.youtube.com/watch?v=fpciHe0FAgk&list=PLD_PIFu4jYOuMnFRKQbl21_jZvtxsIFuz&index=11
+
+const oneAwayString=(str1,str2)=>{
+    if(str1===str2){return false}
+    const obj1=getCharCounts(str1);
+    const obj2=getCharCounts(str2);
+    let counter=0;
+    for(let i in obj1){
+        if(obj1[i]!==obj2[i]){
+            counter++;
+        }else if(counter >=2){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(oneAwayString("ravi","kmvi"));
+
+//#######################################################################
+//string Compression if 1. aabcccccaaa => a2b1c5a3
+//                      2. abcd => abcd  if unique letters must return same
+
+const getCompressedString=(str)=>{
+    let count=1,output="",uniqCount=0;
+    for(let i=0;i<str.length;i++){
+        if(str[i] === str[i+1]){
+            count++;
+        }else{
+            output +=str[i]+count;
+            count=1;
+            uniqCount++;
+        }
+        if(uniqCount == str.length){
+            output=str;
+        }
+    }
+    
+    console.log(output);
+}
+getCompressedString('aabcccccaaa');
+getCompressedString('abcd');
