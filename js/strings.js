@@ -30,9 +30,10 @@ const findCharCount=(string)=>{
     }
     console.log("Max char is "+maxChar+" : "+maxNum);
     console.log("Max chars is ",maxCharArray);
+    return result;
 }
 
-//findCharCount("ravi kiranair");
+findCharCount("ravi kiranair");
 
 //##############################################################################
 //FIZZBUZZ 
@@ -58,5 +59,26 @@ const fizzbuzz=(num)=>{
         
     }
 }
-
 fizzbuzz(15);
+
+//#############################################################################
+//find is string contains unique chars?
+
+const isStringHasUniqueChar=(str)=>{
+    let res={}
+    for(let ch of str){
+        res[ch]=parseInt(res[ch]?res[ch]+1:1);
+    }
+    for(let key in res){
+        if(res[key] >1){
+            console.log(str+" : String Don't have unique chars");
+            return true;
+            break;
+        }
+    }
+    console.log(str+" : String has all unique keys");
+    return false;
+}
+
+isStringHasUniqueChar('abcdefghi');
+isStringHasUniqueChar('ravikirana');
