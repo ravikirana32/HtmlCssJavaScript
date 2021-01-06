@@ -50,3 +50,15 @@ console.log("----------- every() Example  ---------------------");
 console.log(ages.every(checkAdult)); // if all condtion is true it will return TRUE Else FALSE    OUTPUT: False
 console.log(ages2.every(checkAdult));// if all condtion is true it will return TRUE Else FALSE    OUTPUT: True
 
+
+// The fill(),array.fill(value, start, end) method fills the specified elements in an array with a static value.
+// You can specify the position of where to start and end the filling. If not specified, all elements will be filled.
+// Note: this method overwrites the original array.
+console.log("----------- fill() Example  ---------------------");
+fruits.fill("Ravi",2,4);
+console.log(fruits);// ["apple", "Banana", "Ravi", "Ravi", "Banana"]
+fruits.fill("Kiwi");
+console.log(fruits);//["Kiwi", "Kiwi", "Kiwi", "Kiwi", "Kiwi"]
+
+
+
