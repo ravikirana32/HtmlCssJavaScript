@@ -61,4 +61,17 @@ fruits.fill("Kiwi");
 console.log(fruits);//["Kiwi", "Kiwi", "Kiwi", "Kiwi", "Kiwi"]
 
 
+// The filter(),array.filter(function(currentValue, index, arr), thisValue) method creates an array filled with all array elements that pass a test (provided as a function).
+// Note: filter() does not execute the function for array elements without values.
+// Note: filter() does not change the original array.
 
+let filteredData=ages.filter((item,index,array)=>{
+    return item <=32;
+})
+console.log("----------- filter() Example  ---------------------");
+console.log(filteredData);// [32, 16]
+
+filteredData=ages.filter((item,index,array)=>{
+    return item >=32;
+})
+console.log(filteredData);//[32, 33, 40]
