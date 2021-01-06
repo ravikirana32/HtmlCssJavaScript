@@ -37,6 +37,23 @@ getChunkedarry(arr,4);//OUTPUT : [[1,2,3,4],[5,6,7,8],[9,0]]
 getChunkedarry(arr,3);//OUTPUT : [[1,2,3],[4,5,6],[7,8,9],[0]]
 getChunkedarry(arr,2);//OUTPUT : [[1,2],[3,4],[5,6],[7,8],[9,0]]
 
+
+//Solution 2
+let a=[1,2,3,4,5,6,7,8,9,10]
+
+const getsubArray=(count)=>{
+  let finalArray=[];
+  for(let i=0;i<a.length;i+=count){
+    finalArray.push(a.slice(i,i+count));
+    
+  }
+  console.log(finalArray);
+}
+
+getsubArray(2);
+getsubArray(3);
+getsubArray(5);
+
 //###############################################################
 //Zero Matrix Algorithm
 //in N*N matric if we found 0 we need to replace the values by 0 in entaire row and column
