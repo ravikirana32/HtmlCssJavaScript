@@ -14,7 +14,6 @@ console.log(ar);
 //The copyWithin(coping value position,copy to position) method copies array elements to another position in the array, overwriting the existing values.
 //This method will never add more items to the array.
 //Note: this method overwrites the original array.
-
 let fruits=["apple","Mango","finapple","Orrange","Banana"];
 fruits.copyWithin(1,4)
 console.log("\n----------- copyWithin Example  ---------------------");
@@ -25,7 +24,6 @@ console.log(fruits);//["apple", "Banana", "finapple", "Orrange", "Banana"]
 //The entries() method returns an Array Iterator object with key/value pairs.
 //For each item in the original array, the new iteration object will contain an array with the index as the key, and the item value as the value:
 //Note: This method does not change the original array.
-
 let entries=fruits.entries();
 console.log("\n----------- entries Example  ---------------------");
 for(let item of entries){
@@ -39,7 +37,6 @@ for(let item of entries){
 // If no false occur, every() returns true
 // Note: every() does not execute the function for array elements without values.
 // Note: every() does not change the original array
-
 let ages = [32, 33, 16, 40];
 let ages2 = [32, 33, 20, 40];
 
@@ -64,7 +61,6 @@ console.log(fruits);//["Kiwi", "Kiwi", "Kiwi", "Kiwi", "Kiwi"]
 // The filter(),array.filter(function(currentValue, index, arr), thisValue) method creates an array filled with all array elements that pass a test (provided as a function).
 // Note: filter() does not execute the function for array elements without values.
 // Note: filter() does not change the original array.
-
 let filteredData=ages.filter((item,index,array)=>{
     return item <=32;
 })
@@ -100,7 +96,6 @@ console.log(ages2.find((item,index,arr)=>{
 // Note: findIndex() does not execute the function for array elements without values.
 // Note: findIndex() does not change the original array.
 //it is ame as IndexOf(value) but here will pass function with condition instaed of value
-
 console.log("\n----------- findIndex() Example  ---------------------");
 console.log(ages.findIndex((curritem,index,arr)=>{
     return curritem >18
@@ -121,7 +116,7 @@ ages.forEach((curritem,index,arr)=>{
 
 //The Array.from() method returns an Array object from any object with a length property or an iterable object.
 //Array.from(object, mapFunction, thisValue)
-console.log("\n----------- from() Example  ---------------------");
+console.log("\n----------- Array.from() Example  ---------------------");
 let formArr = Array.from("ABCDEFG");
 console.log(formArr);//["A", "B", "C", "D", "E", "F", "G"]
 
@@ -133,6 +128,42 @@ console.log("\n----------- includes() Example  ---------------------");
 console.log(formArr.includes('D'));//True
 console.log(formArr.includes('M'));//False
 console.log(formArr.includes('a'));//false  it check with case sensitive
+
+
+// The indexOf() method searches the array for the specified item, and returns its position.
+// The search will start at the specified position, or at the beginning if no start position is specified, and end the search at the end of the array.
+// Returns -1 if the item is not found.
+// If the item is present more than once, the indexOf method returns the position of the first occurence.
+// Note: The first item has position 0, the second item has position 1, and so on.
+// Tip: If you want to search from end to start, use the lastIndexOf() method
+//array.indexOf(item, start)
+console.log("\n----------- indexOf() and lastIndexOf() Example  ---------------------");
+let indexOfArray=[1,2,3,4,5,6,4,3,2,1];
+console.log(indexOfArray.indexOf(3));//2
+console.log(indexOfArray.indexOf(10));//-1
+console.log(indexOfArray.indexOf(3,4));//7    // Search starts form 4th index
+console.log(indexOfArray.lastIndexOf(2));//8   // search starts from end of the array and returns first element from last
+
+
+// The isArray() method determines whether an object is an array.
+// This function returns true if the object is an array, and false if not.
+//Array.isArray(obj)
+console.log("\n----------- Array.isArray() Example  ---------------------");
+console.log(Array.isArray(indexOfArray));//True
+console.log(Array.isArray("RAVI KIRANA"));//False
+console.log(Array.isArray({name:"Ravi kirana"}));//False
+
+
+// The join() method returns the array as a string.
+// The elements will be separated by a specified separator. The default separator is comma (,).
+// Note: this method will not change the original array.
+//array.join(separator)
+console.log("\n----------- join() Example  ---------------------");
+console.log(formArr.join());//A,B,C,D,E,F,G   by default ','  comma added as delimiter
+console.log(formArr.join(' '));//A B C D E F G
+console.log(formArr.join('#'));//A#B#C#D#E#F#G
+
+
 
 
 
