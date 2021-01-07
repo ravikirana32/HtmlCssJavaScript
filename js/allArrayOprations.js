@@ -164,6 +164,16 @@ console.log(formArr.join(' '));//A B C D E F G
 console.log(formArr.join('#'));//A#B#C#D#E#F#G
 
 
+// The keys() method returns an Array Iterator object with the keys of an array.
+// Note: this method does not change the original array.
+console.log("\n----------- keys() Example  ---------------------");
+let keys=fruits.keys();
+for(let x of keys){
+    console.log(x);
+}
 
+keys.forEach((curritem,index,arr)=>{
+    console.log(curritem);
+})
 
 
