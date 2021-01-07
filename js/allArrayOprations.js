@@ -93,4 +93,18 @@ console.log(ages2.find((item,index,arr)=>{
 }))//20
 
 
+// The findIndex(),array.findIndex(function(currentValue, index, arr), thisValue) method returns the index of the first element in an array that pass a test (provided as a function).
+// The findIndex() method executes the function once for each element present in the array:
+// If it finds an array element where the function returns a true value, findIndex() returns the index of that array element (and does not check the remaining values)
+// Otherwise it returns -1
+// Note: findIndex() does not execute the function for array elements without values.
+// Note: findIndex() does not change the original array.
+//it is ame as IndexOf(value) but here will pass function with condition instaed of value
 
+console.log("\n----------- findIndex() Example  ---------------------");
+console.log(ages.findIndex((curritem,index,arr)=>{
+    return curritem >18
+}))//0
+console.log(ages2.findIndex((curritem,index,arr)=>{
+    return curritem <=20
+}))//2
