@@ -108,3 +108,31 @@ console.log(ages.findIndex((curritem,index,arr)=>{
 console.log(ages2.findIndex((curritem,index,arr)=>{
     return curritem <=20
 }))//2
+
+
+// The forEach() method calls a function once for each element in an array, in order.
+// Note: the function is not executed for array elements without values.
+//array.forEach(function(currentValue, index, arr), thisValue)
+console.log("\n----------- forEach() Example  ---------------------");
+ages.forEach((curritem,index,arr)=>{
+    console.log(curritem);
+})
+
+
+//The Array.from() method returns an Array object from any object with a length property or an iterable object.
+//Array.from(object, mapFunction, thisValue)
+console.log("\n----------- from() Example  ---------------------");
+let formArr = Array.from("ABCDEFG");
+console.log(formArr);//["A", "B", "C", "D", "E", "F", "G"]
+
+
+// The includes() method determines whether an array contains a specified element.
+// This method returns true if the array contains the element, and false if not.
+// Note: The includes() method is case sensitive.
+console.log("\n----------- includes() Example  ---------------------");
+console.log(formArr.includes('D'));//True
+console.log(formArr.includes('M'));//False
+console.log(formArr.includes('a'));//false  it check with case sensitive
+
+
+
