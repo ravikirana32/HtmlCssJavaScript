@@ -300,3 +300,66 @@ if(showAllLogs){
     console.log(unshifted);//6   total length of array
 }
 
+
+// The slice() method returns the selected elements in an array, as a new array object.
+// The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+// Note: The original array will not be changed.
+//array.slice(start, end)
+console.log("\n----------- Slice() Example  ---------------------");
+let sliceArray=['ravi','kirana','sunray','apple','pineapple','mango'];
+let slicedata=sliceArray.slice(2,5);
+console.log(slicedata);//["sunray", "apple", "pineapple"]
+
+
+// The some() method checks if any of the elements in an array pass a test (provided as a function).
+// The some() method executes the function once for each element present in the array:
+// If it finds an array element where the function returns a true value, some() returns true (and does not check the remaining values)
+// Otherwise it returns false
+// Note: some() does not execute the function for array elements without values.
+// Note: some() does not change the original array.
+//array.some(function(currentValue, index, arr), thisValue)
+console.log("\n----------- some() Example  ---------------------");
+var ages = [3, 10, 18, 20];
+console.log(
+    ages.some((ages)=>{
+        return ages >= 18;
+    })
+)//True
+console.log(
+    ages.some((ages)=>{
+        return ages >= 30;
+    })
+)//False
+
+
+// The sort() method sorts the items of an array.
+// The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down).
+// By default, the sort() method sorts the values as strings in alphabetical and ascending order.
+// This works well for strings ("Apple" comes before "Banana"). However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+// Because of this, the sort() method will produce an incorrect result when sorting numbers.
+// You can fix this by providing a "compare function" (See "Parameter Values" below).
+// Note: This method changes the original array.
+//array.sort(compareFunction)
+
+// compareFunction	Optional. A function that defines an alternative sort order. The function should return a negative, zero, or positive value, depending on the arguments, like:
+// function(a, b){return a-b}
+// When the sort() method compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+
+// Example:
+
+// When comparing 40 and 100, the sort() method calls the compare function(40,100).
+
+// The function calculates 40-100, and returns -60 (a negative value).
+
+// The sort function will sort 40 as a value lower than 100.
+console.log("\n----------- sort() Example  ---------------------");
+var sortfruits = ["Banana", "Orange", "Apple", "Mango"];
+var sortnumbers=[25,100,3,50,60,7];
+sortfruits.sort();
+console.log(sortfruits);
+sortnumbers.sort((a,b)=>{return a-b;});
+console.log("Acending ",sortnumbers);
+sortnumbers.sort((a,b)=>{return b-a;});
+console.log("Decending ",sortnumbers);
+
+
