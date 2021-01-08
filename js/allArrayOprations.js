@@ -4,6 +4,8 @@ let showAllLogs=false;
 
 let fruits=["apple","Mango","finapple","Orrange","Banana"];
 let numbers=[2,3,4,10,20];
+let prototypeArray=["ravi","kirana","ravi kirana",'sun','ray','sun ray'];
+let prototypeArray2=['ramanagara','bangalore','kailancha'];
 if(showAllLogs){
 
     //Array.concat(arrays to concat)
@@ -170,87 +172,107 @@ if(showAllLogs){
     console.log(formArr.join(' '));//A B C D E F G
     console.log(formArr.join('#'));//A#B#C#D#E#F#G
 
-}
 
-// The keys() method returns an Array Iterator object with the keys of an array.
-// Note: this method does not change the original array.
-//it returns ittreter function not array so foreach will not work here only for loop
-console.log("\n----------- keys() Example  ---------------------");
-let keys=fruits.keys();
-for(let x of keys){
-    console.log(x);
-}
-
-
-// The map() method creates a new array with the results of calling a function for every array element.
-// The map() method calls the provided function once for each element in an array, in order.
-// Note: map() does not execute the function for array elements without values.
-// Note: this method does not change the original array.
-//array.map(function(currentValue, index, arr), thisValue)
-console.log("\n----------- map() Example  ---------------------");
-let d=numbers.map((item)=>{return item*item});
-console.log(d);//[4, 9, 16, 100, 400]    it will return modified array
-
-
-// The pop() method removes the last element of an array, and returns that element.
-// Note: This method changes the length of an array.
-// Tip: To remove the first element of an array, use the shift() method.
-console.log("\n----------- pop() Example  ---------------------");
-console.log(numbers);
-numbers.pop();
-numbers.pop();
-
-
-
-// The push() method adds new items to the end of an array, and returns the new length.
-// Note: The new item(s) will be added at the end of the array.
-// Note: This method changes the length of the array.
-// Tip: To add items at the beginning of an array, use the unshift() method.
-console.log("\n----------- push() Example  ---------------------");
-console.log(numbers);
-numbers.push(10);
-numbers.push(20);
-console.log(numbers);
-
-
-// The prototype constructor allows you to add new properties and methods to the Array() object.
-// When constructing a property, ALL arrays will be given the property, and its value, as default.
-// When constructing a method, ALL arrays will have this method available.
-// Note: Array.prototype does not refer to a single array, but to the Array() object itself.
-// Note: Prototype is a global object constructor which is available for all JavaScript objects.
-//Array.prototype.name = value
-console.log("\n----------- prototype() Example  ---------------------");
-Array.prototype.toUperCase=function(){
-    for(let i=0;i<this.length;i++){
-        this[i]=this[i].toUpperCase();
+    // The keys() method returns an Array Iterator object with the keys of an array.
+    // Note: this method does not change the original array.
+    //it returns ittreter function not array so foreach will not work here only for loop
+    console.log("\n----------- keys() Example  ---------------------");
+    let keys=fruits.keys();
+    for(let x of keys){
+        console.log(x);
     }
+
+
+    // The map() method creates a new array with the results of calling a function for every array element.
+    // The map() method calls the provided function once for each element in an array, in order.
+    // Note: map() does not execute the function for array elements without values.
+    // Note: this method does not change the original array.
+    //array.map(function(currentValue, index, arr), thisValue)
+    console.log("\n----------- map() Example  ---------------------");
+    let d=numbers.map((item)=>{return item*item});
+    console.log(d);//[4, 9, 16, 100, 400]    it will return modified array
+
+
+    // The pop() method removes the last element of an array, and returns that element.
+    // Note: This method changes the length of an array.
+    // Tip: To remove the first element of an array, use the shift() method.
+    console.log("\n----------- pop() Example  ---------------------");
+    console.log(numbers);
+    numbers.pop();
+    numbers.pop();
+
+
+
+    // The push() method adds new items to the end of an array, and returns the new length.
+    // Note: The new item(s) will be added at the end of the array.
+    // Note: This method changes the length of the array.
+    // Tip: To add items at the beginning of an array, use the unshift() method.
+    console.log("\n----------- push() Example  ---------------------");
+    console.log(numbers);
+    numbers.push(10);
+    numbers.push(20);
+    console.log(numbers);
+
+
+    // The prototype constructor allows you to add new properties and methods to the Array() object.
+    // When constructing a property, ALL arrays will be given the property, and its value, as default.
+    // When constructing a method, ALL arrays will have this method available.
+    // Note: Array.prototype does not refer to a single array, but to the Array() object itself.
+    // Note: Prototype is a global object constructor which is available for all JavaScript objects.
+    //Array.prototype.name = value
+    console.log("\n----------- prototype() Example  ---------------------");
+    Array.prototype.toUperCase=function(){
+        for(let i=0;i<this.length;i++){
+            this[i]=this[i].toUpperCase();
+        }
+    }
+
+    prototypeArray.toUperCase()
+    prototypeArray2.toUperCase()
+    console.log(prototypeArray);
+    console.log(prototypeArray2);
+
+
+    // The reduce() method reduces the array to a single value.
+    // The reduce() method executes a provided function for each value of the array (from left-to-right).
+    // The return value of the function is stored in an accumulator (result/total).
+    // Note: reduce() does not execute the function for array elements without values.
+    // Note: This method does not change the original array.
+    //we ca use this to find sumb,sub,multplication   min max values in array
+    //array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+    console.log("\n----------- reduce() Example  ---------------------");
+    let marks=[35,40,60,70,90,30];
+    console.log(
+    marks.reduce((a,b)=>{
+        return a+b;
+    //return a>b?a:b;
+    //return a<b?a:b;
+    }))
+    console.log(
+        prototypeArray.reduce((a,b)=>{
+        //return a.length<b.length?a:b;
+        //return a.length>b.length?a:b;
+        return a.length<b.length?a.length:b.length;
+    }))
+
+
+    // The reduceRight() method reduces the array to a single value.
+    // The reduceRight() method executes a provided function for each value of the array (from right-to-left).
+    // The return value of the function is stored in an accumulator (result/total).
+    // Note: reduceRight() does not execute the function for array elements without values.
+    //array.reduceRight(function(total, currentValue, currentIndex, arr), initialValue)
+    console.log("\n----------- reduceRight() Example  ---------------------");
+    var marksdata = [175, 50, 25];
+    console.log(marksdata.reduceRight((total, num)=> {
+        return total - num;
+    }));
+
 }
 
-let prototypeArray=["ravi","kirana","ravi kirana",'sun','ray','sun ray'];
-let prototypeArray2=['ramanagara','bangalore','kailancha'];
-prototypeArray.toUperCase()
-prototypeArray2.toUperCase()
-console.log(prototypeArray);
-console.log(prototypeArray2);
+// The reverse() method reverses the order of the elements in an array.
+// Note: this method will change the original array.
+//array.reverse()
+console.log("\n----------- reverse() Example  ---------------------");
+console.log(prototypeArray.reverse());
+console.log(prototypeArray2.reverse());
 
-
-// The reduce() method reduces the array to a single value.
-// The reduce() method executes a provided function for each value of the array (from left-to-right).
-// The return value of the function is stored in an accumulator (result/total).
-// Note: reduce() does not execute the function for array elements without values.
-// Note: This method does not change the original array.
-//we ca use this to find sumb,sub,multplication   min max values in array
-console.log("\n----------- reduce() Example  ---------------------");
-let marks=[35,40,60,70,90,30];
-console.log(
-marks.reduce((a,b)=>{
-    return a+b;
-  //return a>b?a:b;
-  //return a<b?a:b;
-}))
-console.log(
-    prototypeArray.reduce((a,b)=>{
-    //return a.length<b.length?a:b;
-    //return a.length>b.length?a:b;
-    return a.length<b.length?a.length:b.length;
-}))
