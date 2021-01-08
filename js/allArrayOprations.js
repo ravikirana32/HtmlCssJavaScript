@@ -3,6 +3,7 @@ let showAllLogs=false;
 
 
 let fruits=["apple","Mango","finapple","Orrange","Banana"];
+let fruits2=["apple","Mango","finapple","Orrange","Banana"];
 let numbers=[2,3,4,10,20];
 let prototypeArray=["ravi","kirana","ravi kirana",'sun','ray','sun ray'];
 let prototypeArray2=['ramanagara','bangalore','kailancha'];
@@ -267,35 +268,35 @@ if(showAllLogs){
         return total - num;
     }));
 
+    // The reverse() method reverses the order of the elements in an array.
+    // Note: this method will change the original array.
+    //array.reverse()
+    console.log("\n----------- reverse() Example  ---------------------");
+    console.log(prototypeArray.reverse());
+    console.log(prototypeArray2.reverse());
+
+
+    // The shift() method removes the first item of an array.
+    // Note: This method changes the length of the array.
+    // Note: The return value of the shift method is the removed item.
+    // Tip: To remove the last item of an array, use the pop() method. it is oppsite of pop()
+    // Note: this method will change the original array.
+    //array.shift()
+    console.log("\n----------- shift() Example  ---------------------");
+    console.log(fruits2);//["apple", "Mango", "finapple", "Orrange", "Banana"]
+    let shifted=fruits2.shift();
+    console.log(fruits2);//["Mango", "finapple", "Orrange", "Banana"]
+    console.log(shifted);//apple
+
+
+    // The unshift() method adds new items to the beginning of an array, and returns the new length.
+    // Note: This method changes the length of an array.
+    // Tip: To add new items at the end of an array, use the push() method.
+    //array.unshift(item1, item2, ..., itemX)
+    console.log("\n----------- unshift() Example  ---------------------");
+    console.log(fruits2);//[Mango", "finapple", "Orrange", "Banana"]
+    let unshifted=fruits2.unshift("unshift1","unshift2");
+    console.log(fruits2);//["unshift1","unshift2","Mango", "finapple", "Orrange", "Banana"]
+    console.log(unshifted);//6   total length of array
 }
 
-// The reverse() method reverses the order of the elements in an array.
-// Note: this method will change the original array.
-//array.reverse()
-console.log("\n----------- reverse() Example  ---------------------");
-console.log(prototypeArray.reverse());
-console.log(prototypeArray2.reverse());
-
-
-// The shift() method removes the first item of an array.
-// Note: This method changes the length of the array.
-// Note: The return value of the shift method is the removed item.
-// Tip: To remove the last item of an array, use the pop() method. it is oppsite of pop()
-// Note: this method will change the original array.
-//array.shift()
-console.log("\n----------- shift() Example  ---------------------");
-console.log(fruits);//["apple", "Mango", "finapple", "Orrange", "Banana"]
-let shifted=fruits.shift();
-console.log(fruits);//["Mango", "finapple", "Orrange", "Banana"]
-console.log(shifted);//apple
-
-
-// The unshift() method adds new items to the beginning of an array, and returns the new length.
-// Note: This method changes the length of an array.
-// Tip: To add new items at the end of an array, use the push() method.
-//array.unshift(item1, item2, ..., itemX)
-console.log("\n----------- unshift() Example  ---------------------");
-console.log(fruits);//[Mango", "finapple", "Orrange", "Banana"]
-let unshifted=fruits.unshift("unshift1","unshift2");
-console.log(fruits);//["unshift1","unshift2","Mango", "finapple", "Orrange", "Banana"]
-console.log(unshifted);//6   total length of array
