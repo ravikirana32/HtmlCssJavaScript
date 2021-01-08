@@ -213,3 +213,44 @@ numbers.push(20);
 console.log(numbers);
 
 
+// The prototype constructor allows you to add new properties and methods to the Array() object.
+// When constructing a property, ALL arrays will be given the property, and its value, as default.
+// When constructing a method, ALL arrays will have this method available.
+// Note: Array.prototype does not refer to a single array, but to the Array() object itself.
+// Note: Prototype is a global object constructor which is available for all JavaScript objects.
+//Array.prototype.name = value
+console.log("\n----------- prototype() Example  ---------------------");
+Array.prototype.toUperCase=function(){
+    for(let i=0;i<this.length;i++){
+        this[i]=this[i].toUpperCase();
+    }
+}
+
+let prototypeArray=["ravi","kirana","ravi kirana",'sun','ray','sun ray'];
+let prototypeArray2=['ramanagara','bangalore','kailancha'];
+prototypeArray.toUperCase()
+prototypeArray2.toUperCase()
+console.log(prototypeArray);
+console.log(prototypeArray2);
+
+
+// The reduce() method reduces the array to a single value.
+// The reduce() method executes a provided function for each value of the array (from left-to-right).
+// The return value of the function is stored in an accumulator (result/total).
+// Note: reduce() does not execute the function for array elements without values.
+// Note: This method does not change the original array.
+//we ca use this to find sumb,sub,multplication   min max values in array
+console.log("\n----------- reduce() Example  ---------------------");
+let marks=[35,40,60,70,90,30];
+console.log(
+marks.reduce((a,b)=>{
+    return a+b;
+  //return a>b?a:b;
+  //return a<b?a:b;
+}))
+console.log(
+    prototypeArray.reduce((a,b)=>{
+    //return a.length<b.length?a:b;
+    //return a.length>b.length?a:b;
+    return a.length<b.length?a.length:b.length;
+}))

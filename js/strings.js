@@ -195,3 +195,14 @@ const getCompressedString=(str)=>{
 }
 getCompressedString('aabcccccaaa');
 getCompressedString('abcd');
+
+
+//############################################################################
+//finding max min word count and max min words in a string
+let prototypeArray=["ravi","kirana","ravi kirana",'sun','ray','sun ray'];
+console.log(
+    prototypeArray.reduce((a,b)=>{
+    return a.length<b.length?a:b;
+    //return a.length>b.length?a:b;
+    //return a.length<b.length?a.length:b.length;
+}))
