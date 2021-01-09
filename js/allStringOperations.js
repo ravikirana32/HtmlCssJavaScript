@@ -174,3 +174,121 @@ var res4=replacestr2.replace(/blue|house|car/gi,(val)=>{
 console.log(res4);
 
 
+// The search() method searches a string for a specified value, and returns the position of the match.
+// The search value can be string or a regular expression.
+// This method returns -1 if no match is found.
+//string.search(searchvalue)
+console.log('\n------------------------ search -----------------------');
+var searchstr = "Mr. Blue has a blue house";
+console.log(searchstr.search("blue"));//15
+console.log(searchstr.search("red"));//-1
+
+
+// The slice() method extracts parts of a string and returns the extracted parts in a new string.
+// Use the start and end parameters to specify the part of the string you want to extract.
+// The first character has the position 0, the second has position 1, and so on.
+// Tip: Use a negative number to select from the end of the string.
+//string.slice(start, end)
+console.log('\n------------------------ slice -----------------------');
+var slicestr = "Hello world!";
+console.log(slicestr.slice(0, 5));//string from 0-5  //Hello
+console.log(slicestr.slice(0));//whole string //Hello world!
+console.log(slicestr.slice(5));//string form 5 to end of dtring // world!
+
+
+// The split() method is used to split a string into an array of substrings, and returns the new array.
+// Tip: If an empty string ("") is used as the separator, the string is split between each character.
+// Note: The split() method does not change the original string.
+//string.split(separator, limit)
+console.log('\n------------------------ split -----------------------');
+var splitstr = "How are you doing today?";
+console.log(splitstr.split());//[How are you doing today?]
+console.log(splitstr.split(" "));//[How,are,you,doing,today?]
+console.log(splitstr.split(" ",3));//[How,are,you]
+console.log(splitstr.split(""));//["H", "o", "w", " ", "a", "r", "e", " ", "y", "o", "u", " ", "d", "o", "i", "n", "g", " ", "t", "o", "d", "a", "y", "?"]
+
+
+// The startsWith() method determines whether a string begins with the characters of a specified string.
+// This method returns true if the string begins with the characters, and false if not.
+//string.startsWith(searchvalue, start)
+console.log('\n------------------------ startsWith -----------------------');
+console.log(splitstr.startsWith('How'));//true
+console.log(splitstr.startsWith('you'));//false
+console.log(splitstr.startsWith('you',8));//true
+
+
+// The substr() method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters.
+// Tip: To extract characters from the end of the string, use a negative start number (This does not work in IE 8 and earlier).
+// Note: The substr() method does not change the original string.
+//string.substr(start, length)
+console.log('\n------------------------ substr -----------------------');
+console.log(slicestr.substr(2));//llo world!
+console.log(slicestr.substr(0,1));//H
+console.log(slicestr.substr(11,1));//!
+
+
+// The substring() method extracts the characters from a string, between two specified indices, and returns the new sub string.
+// This method extracts the characters in a string between "start" and "end", not including "end" itself.
+// If "start" is greater than "end", this method will swap the two arguments, meaning str.substring(1, 4) == str.substring(4, 1).
+// If either "start" or "end" is less than 0, it is treated as if it were 0.
+// Note: The substring() method does not change the original string.
+//string.substring(start, end)
+console.log('\n------------------------ substring -----------------------');
+console.log(slicestr.substring(2));//llo world!
+console.log(slicestr.substring(4,1));//ell if a>b then it will be b,a ex (4,1)=>(1,4)
+console.log(slicestr.substring(-3));//Hello world!
+console.log(slicestr.substring(0,1));//H
+console.log(slicestr.substring(slicestr.length - 1, slicestr.length));//!
+
+
+// The toLocaleLowerCase() method converts a string to lowercase letters, according to the host's current locale.
+// The locale is based on the language settings of the browser.
+// Generally, this method returns the same result as the toLowerCase() method. However, for some locales, where language conflict with the regular Unicode case mappings occurs (such as Turkish), the results may vary.
+// Note: The toLocaleLowerCase() method does not change the original string.
+//string.toLocaleLowerCase()
+console.log('\n------------------------ toLocaleLowerCase -----------------------');
+console.log(slicestr.toLocaleLowerCase());//hello world!
+
+
+// The toLocaleUpperCase() method converts a string to uppercase letters, according to the host's current locale.
+// The locale is based on the language settings of the browser.
+// Generally, this method returns the same result as the toUpperCase() method. However, for some locales, where language conflict with the regular Unicode case mappings occurs (such as Turkish), the results may vary.
+// Note: The toLocaleUpperCase() method does not change the original string.
+//string.toLocaleUpperCase()
+console.log('\n------------------------ toLocaleUpperCase -----------------------');
+console.log(slicestr.toLocaleUpperCase());//HELLO WORLD!
+
+
+// The toLowerCase() method converts a string to lowercase letters.
+// Note: The toLowerCase() method does not change the original string.
+//string.toLowerCase()
+console.log('\n------------------------ toLowerCase -----------------------');
+console.log(slicestr.toLowerCase());//hello world!
+
+
+// The toUpperCase() method converts a string to uppercase letters.
+// Note: The toUpperCase() method does not change the original string.
+//string.toUpperCase()
+console.log('\n------------------------ toUpperCase -----------------------');
+console.log(slicestr.toUpperCase());//HELLO WORLD!
+
+
+//The toString() method returns the value of a String object.
+//string.toString()
+console.log('\n------------------------ toString -----------------------');
+console.log(slicestr.toString());//hello world!
+
+
+// The trim() method removes whitespace from both sides of a string.
+// Note: The trim() method does not change the original string.
+//string.trim()
+console.log('\n------------------------ trim -----------------------');
+let trimstr="    hellow world welcome to my new world           ";
+console.log(trimstr.trim());
+
+
+// The valueOf() method returns the primitive value of a String object.
+// Note: This method is usually called automatically by JavaScript behind the scenes, and not explicitly in code.
+//String.valueOf()
+console.log('\n------------------------ valueOf -----------------------');
+console.log(splitstr.valueOf());//How are you doing today?
