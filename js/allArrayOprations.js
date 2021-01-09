@@ -377,4 +377,18 @@ spliceArray.splice(2,2,'Kiwi','Pine Apple');
 console.log(spliceArray);////["Banana", "Orange",'Kiwi','Pine Apple']
 
 
+// The toString() method returns a string with all the array values, separated by commas.
+// Note: This method will not change the original array.
+//array.toString()
+console.log("\n----------- toString() Example  ---------------------");
+var x = spliceArray.toString();
+console.log(x);
 
+
+// The valueOf() method returns the array.
+// This method is the default method of the array object. Array.valueOf() will return the same as Array
+// Note: This method will not change the original array.
+//array.valueOf()
+console.log("\n----------- valueOf() Example  ---------------------");
+var v = spliceArray.valueOf();
+console.log(v);
