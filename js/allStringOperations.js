@@ -49,3 +49,22 @@ console.log(endstr.endsWith("o", 5));//true
 console.log(endstr.endsWith("the"));//false
 console.log(endstr.endsWith("universe."));//true
 console.log(endstr.endsWith("universe.",25));//false
+
+
+// The fromCharCode() method converts Unicode values into characters.
+// Note: This is a static method of the String object, and the syntax is always String.fromCharCode().
+//String.fromCharCode(n1, n2, ..., nX)
+console.log('\n------------------------ String.fromCharCode() -----------------------');
+console.log(String.fromCharCode(65),String.fromCharCode(66),String.fromCharCode(67));//A B C
+
+
+// The includes() method determines whether a string contains the characters of a specified string.
+// This method returns true if the string contains the characters, and false if not.
+// Note: The includes() method is case sensitive.
+//string.includes(searchvalue, start)
+console.log('\n------------------------ includes() -----------------------');
+console.log(endstr.includes('welcome'));//true
+console.log(endstr.includes('Welcome'));//false
+console.log(endstr.includes('ravi'));//false
+
+
