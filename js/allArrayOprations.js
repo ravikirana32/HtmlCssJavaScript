@@ -363,3 +363,18 @@ sortnumbers.sort((a,b)=>{return b-a;});
 console.log("Decending ",sortnumbers);
 
 
+// The splice() method adds/removes items to/from an array, and returns the removed item(s).
+// Note: This method changes the original array.
+//array.splice(index, howmany, item1, ....., itemX)
+console.log("\n----------- splice() Example  ---------------------");
+let spliceArray=["Banana", "Orange", "Apple", "Mango"];
+console.log(spliceArray);//["Banana", "Orange", "Apple", "Mango"]
+spliceArray.splice(2,0,'Kiwi','Pine Apple')
+console.log(spliceArray);//["Banana", "Orange",'Kiwi','Pine Apple', "Apple", "Mango"]
+spliceArray.splice(2,2);
+console.log(spliceArray);//["Banana", "Orange", "Apple", "Mango"]
+spliceArray.splice(2,2,'Kiwi','Pine Apple');
+console.log(spliceArray);////["Banana", "Orange",'Kiwi','Pine Apple']
+
+
+
