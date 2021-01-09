@@ -147,3 +147,30 @@ function Employee(name, jobtitle, born) {
   fred2.print();//Ravi working as  Kirana  born on  1989  and getting salary  2000
 
   
+  //The repeat() method returns a new string with a specified number of copies of the string it was called on.
+  //string.repeat(count)
+  console.log('\n------------------------ repeat -----------------------');
+  console.log(greet.repeat(2));//HELLO WORLDHELLO WORLD
+  console.log(greet.repeat(3));//HELLO WORLDHELLO WORLDHELLO WORLD
+
+
+// The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
+// Note: If you are replacing a value (and not a regular expression), only the first instance of the value will be replaced. To replace all occurrences of a specified value, use the global (g) modifier (see "More Examples" below).
+// Read more about regular expressions in our RegExp Tutorial and our RegExp Object Reference.
+// This method does not change the original string.
+// string.replace(searchvalue, newvalue)
+console.log('\n------------------------ replace -----------------------');
+var replacestr = "Visit Microsoft!";
+var res = replacestr.replace("Microsoft", "My world");
+console.log(res);//Visit My world
+var replacestr2 = "Mr Blue has a blue house and a blue car";
+var res2 = replacestr2.replace(/blue/g, "red");
+console.log(res2);//Mr Blue has a red house and a red car
+var res3 = replacestr2.replace(/blue/gi, "red");
+console.log(res3);//Mr red has a red house and a red car
+var res4=replacestr2.replace(/blue|house|car/gi,(val)=>{
+    return val.toUpperCase();//Mr BLUE has a BLUE HOUSE and a BLUE CAR
+});
+console.log(res4);
+
+
