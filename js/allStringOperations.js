@@ -66,5 +66,84 @@ console.log('\n------------------------ includes() -----------------------');
 console.log(endstr.includes('welcome'));//true
 console.log(endstr.includes('Welcome'));//false
 console.log(endstr.includes('ravi'));//false
+console.log(endstr.includes('welcome',13));//true
+console.log(endstr.includes('welcome',20));//true
 
 
+// The indexOf() method returns the position of the first occurrence of a specified value in a string.
+// This method returns -1 if the value to search for never occurs.
+// Note: The indexOf() method is case sensitive.
+//string.indexOf(searchvalue, start)
+console.log('\n------------------------ indexOf() -----------------------');
+console.log(endstr.indexOf('welcome'));//13
+console.log(endstr.indexOf('welcome',13));//13
+console.log(endstr.indexOf('welcome',20));//-1
+console.log(endstr.indexOf('ravi',13));//-1
+console.log(endstr.indexOf('z'));//-1
+console.log(endstr.indexOf('e'));//1
+
+
+// The lastIndexOf() method returns the position of the last occurrence of a specified value in a string.
+// Note: The string is searched from the end to the beginning, but returns the index starting at the beginning, at position 0.
+// This method returns -1 if the value to search for never occurs.
+// Note: The lastIndexOf() method is case sensitive!
+//string.lastIndexOf(searchvalue, start)
+console.log('\n------------------------ lastIndexOf() -----------------------');
+console.log(endstr.lastIndexOf('e'));//35
+
+
+// The length property returns the length of a string (number of characters).
+// The length of an empty string is 0.
+//string.length
+console.log('\n------------------------ length() -----------------------');
+console.log(endstr.length);//37
+
+
+// The localeCompare() method compares two strings in the current locale.
+// The locale is based on the language settings of the browser.
+// The localeCompare() method returns a number indicating whether the string comes before, after or is equal as the compareString in sort order.
+//string.localeCompare(compareString)
+console.log('\n------------------------ localeCompare() -----------------------');
+var compstr1 = "ab";
+var compstr2 = "cd";
+var compstr3 = "ab";
+console.log(compstr1.localeCompare(compstr2));//-1 not equal
+console.log(compstr1.localeCompare(compstr3));// 0 equal
+console.log(compstr2.localeCompare(compstr3));// 0 equal
+
+
+// The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object.
+// Note: If the regular expression does not include the g modifier (to perform a global search), the match() method will return only the first match in the string.
+// This method returns null if no match is found.
+//string.match(regexp)
+console.log('\n------------------------ match() -----------------------');
+var matchstr = "The rain in SPAIN stays mainly in the plain";
+console.log(matchstr.match(/ain/g));//["ain", "ain", "ain"] //case senstive search
+console.log(matchstr.match(/ain/gi));//["ain","AIN", "ain", "ain"]  //search without case senstive
+
+
+// The prototype property allows you to add new properties and methods to existing object types.
+// Note: Prototype is a global property which is available with almost all JavaScript objects.
+//object.prototype.name = value
+console.log('\n------------------------ prototype -----------------------');
+function Employee(name, jobtitle, born) {
+    this.name = name;
+    this.jobtitle = jobtitle;
+    this.born = born;
+  }
+  Employee.prototype.salary = 2000;
+  Employee.prototype.print=function(){
+      console.log(this);
+      console.log(this.name, "working as ",this.jobtitle," born on ",this.born," and getting salary ",this.salary);
+  }
+  
+  var fred = new Employee("Fred Flintstone", "Caveman", 1970);
+  console.log(fred);//salary 2000
+  fred.salary=50000;
+  console.log(fred.salary);//salary 50000
+  var fred2 = new Employee("Ravi", "Kirana", 1989);
+  console.log(fred2.salary);//salary 2000
+  fred.print();//Fred Flintstone working as  Caveman  born on  1970  and getting salary  50000
+  fred2.print();//Ravi working as  Kirana  born on  1989  and getting salary  2000
+
+  
