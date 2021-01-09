@@ -24,3 +24,28 @@ var str1 = "Hello ";
 var str2 = "world!";
 var res = str1.concat(str2);
 console.log(res);
+
+
+// In JavaScript, the constructor property returns the constructor function for an object.
+// The return value is a reference to the function, not the name of the function:
+// For JavaScript numbers the constructor property returns function Number() { [native code] }
+// For JavaScript strings the constructor property returns function String() { [native code] }
+// For JavaScript booleans the constructor property returns function Boolean() { [native code] }
+//string.constructor
+console.log('\n------------------------ constructor() -----------------------');
+console.log(str1.constructor);//ƒ String() { [native code] }
+str1.constructor("Ravi Kirana");
+console.log(str1.constructor("Ravi Kirana"));//Ravi Kirana
+
+
+// The endsWith() method determines whether a string ends with the characters of a specified string.
+// This method returns true if the string ends with the characters, and false if not.
+// Note: The endsWith() method is case sensitive.
+//string.endsWith(searchvalue, length)
+console.log('\n------------------------ endsWith() -----------------------');
+var endstr = "Hello world, welcome to the universe.";
+console.log(endstr.endsWith("world", 11));//true
+console.log(endstr.endsWith("o", 5));//true
+console.log(endstr.endsWith("the"));//false
+console.log(endstr.endsWith("universe."));//true
+console.log(endstr.endsWith("universe.",25));//false
