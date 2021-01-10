@@ -109,3 +109,12 @@ console.log("\n---------------------  sqrt()  --------------");
 console.log(Math.sqrt(4));//2
 console.log(Math.sqrt(64));//8
 console.log(Math.sqrt(100));//10
+
+
+//The trunc() method returns the integer part of a number.
+//Note: This method will NOT round the number up/down to the nearest integer, but simply remove the decimals.
+//Math.trunc(x)
+console.log("\n---------------------  trunc()  --------------");
+console.log(Math.trunc(4.5));//4
+console.log(Math.trunc(64.8575647));//64
+console.log(Math.trunc(100.999));//100
